@@ -85,18 +85,17 @@ function Navbar() {
   const contract = new web3.eth.Contract(abi, address);
 
 
-
-  
   function metamask() {
+
     if (window.ethereum) {
       window.web3 = new Web3(window.ethereum);
       window.ethereum.enable();
-      window.ethereum.on("accountsChanged", function(accounts) {
-        setAddr(accounts[0]);
-      });
-    } else if (window.web3) {
+      window.ethereum.on("accountsChanged", function(accounts) {setAddr(accounts[0]);});
+    } 
+    else if (window.web3) {
       window.web3 = new Web3(window.web3.currentProvider);
-    } else {
+    } 
+    else {
       window.alert("Should it connect?");
     }
     window.ethereum.enable()
@@ -119,6 +118,8 @@ function Navbar() {
     contract.methods.votep2().send({from: "0x37AC319bE8cd4778D88B3a3eF17bF59157E37279", gas: 3000000, gasPrice: 3000,});
   }
 
+
+
   window.setInterval(getp1, 100);
   window.setInterval(getp2, 100);
 
@@ -131,6 +132,7 @@ function Navbar() {
         <button  className="votep2" onClick={votep2} button> votep2 </button>
         <p className="getp1">{vote1}</p>
         <p className="getp2">{vote2}</p>
+        <p> <b>Connected Public Address:</b> {addr} </p>
       </Navbarstyle>
     </div>
   );
