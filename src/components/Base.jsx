@@ -1,5 +1,5 @@
 import React from "react";
-import { Basestyle } from "./Base.styles";
+import { Basestyle } from "./styles/Base.styles";
 import Img1 from "../images/p1.png";
 import Img2 from "../images/p2.png";
 
