@@ -20,16 +20,28 @@ import Img2 from "../images/p2.png";
   const abi = [
     {
       "inputs": [],
-      "name": "votep1",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "name": "P1",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
       "inputs": [],
-      "name": "votep2",
-      "outputs": [],
-      "stateMutability": "nonpayable",
+      "name": "P2",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
       "type": "function"
     },
     {
@@ -60,34 +72,22 @@ import Img2 from "../images/p2.png";
     },
     {
       "inputs": [],
-      "name": "P1",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
+      "name": "votep1",
+      "outputs": [],
+      "stateMutability": "nonpayable",
       "type": "function"
     },
     {
       "inputs": [],
-      "name": "P2",
-      "outputs": [
-        {
-          "internalType": "uint256",
-          "name": "",
-          "type": "uint256"
-        }
-      ],
-      "stateMutability": "view",
+      "name": "votep2",
+      "outputs": [],
+      "stateMutability": "nonpayable",
       "type": "function"
     }
   ];
 
 
-  const address = "0x035d8B9C7A0D3efD465f609B5E090F2BC1c1C481";
+  const address = "0x4eb40c76E7bE627ba27f3cA987d8F0E63Bc1E1c1";
   const contract = new web3.eth.Contract(abi, address);
 
 
