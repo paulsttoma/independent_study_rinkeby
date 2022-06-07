@@ -20,7 +20,7 @@ import Img2 from "../images/p2.png";
   const abi = [
     {
       "inputs": [],
-      "name": "P1",
+      "name": "Abraham_Lincoln",
       "outputs": [
         {
           "internalType": "uint256",
@@ -33,7 +33,7 @@ import Img2 from "../images/p2.png";
     },
     {
       "inputs": [],
-      "name": "P2",
+      "name": "Theodore_Roosevelt",
       "outputs": [
         {
           "internalType": "uint256",
@@ -46,7 +46,7 @@ import Img2 from "../images/p2.png";
     },
     {
       "inputs": [],
-      "name": "getP1",
+      "name": "get_AbrahamLincoln",
       "outputs": [
         {
           "internalType": "uint256",
@@ -59,7 +59,7 @@ import Img2 from "../images/p2.png";
     },
     {
       "inputs": [],
-      "name": "getP2",
+      "name": "get_TheodoreRoosevelt",
       "outputs": [
         {
           "internalType": "uint256",
@@ -72,14 +72,14 @@ import Img2 from "../images/p2.png";
     },
     {
       "inputs": [],
-      "name": "votep1",
+      "name": "vote_Abraham_Lincoln",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
     },
     {
       "inputs": [],
-      "name": "votep2",
+      "name": "vote_TheodoreRoosevelt",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -87,24 +87,24 @@ import Img2 from "../images/p2.png";
   ];
 
 
-  const address = "0x4eb40c76E7bE627ba27f3cA987d8F0E63Bc1E1c1";
-  const contract = new web3.eth.Contract(abi, address);
+  const contract_address = "0x782d5F50D4a336B653Abd263346340022a550028";
+  const contract = new web3.eth.Contract(abi, contract_address);
 
 
   function getp1() {
-    contract.methods.getP1().call().then(value => setVote1(value));
+    contract.methods.get_TheodoreRoosevelt().call().then(value => setVote1(value));
   }
 
   function getp2() {
-    contract.methods.getP2().call().then(value => setVote2(value));
+    contract.methods.get_AbrahamLincoln().call().then(value => setVote2(value));
   }
 
   function votep1() {
-    contract.methods.votep1().send({from: addr, gas: 3000000, gasPrice: 3000,});
+    contract.methods.vote_TheodoreRoosevelt().send({from: addr, gas: 3000000, gasPrice: 3000,});
   }
 
   function votep2() {
-    contract.methods.votep2().send({from: addr, gas: 3000000, gasPrice: 3000,});
+    contract.methods.vote_Abraham_Lincoln().send({from: addr, gas: 3000000, gasPrice: 3000,});
   }
 
   window.setInterval(getp1, 100);
