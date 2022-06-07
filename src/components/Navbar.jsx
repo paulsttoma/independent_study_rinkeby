@@ -20,7 +20,7 @@ import Img2 from "../images/p2.png";
   const abi = [
     {
       "inputs": [],
-      "name": "Abraham_Lincoln",
+      "name": "AbrahamLincoln",
       "outputs": [
         {
           "internalType": "uint256",
@@ -33,7 +33,7 @@ import Img2 from "../images/p2.png";
     },
     {
       "inputs": [],
-      "name": "Theodore_Roosevelt",
+      "name": "TheodoreRoosevelt",
       "outputs": [
         {
           "internalType": "uint256",
@@ -72,7 +72,7 @@ import Img2 from "../images/p2.png";
     },
     {
       "inputs": [],
-      "name": "vote_Abraham_Lincoln",
+      "name": "vote_AbrahamLincoln",
       "outputs": [],
       "stateMutability": "nonpayable",
       "type": "function"
@@ -87,7 +87,7 @@ import Img2 from "../images/p2.png";
   ];
 
 
-  const contract_address = "0x782d5F50D4a336B653Abd263346340022a550028";
+  const contract_address = "0xB8049cAe4DC54534116AEA22c681Ced3D6e107c1";
   const contract = new web3.eth.Contract(abi, contract_address);
 
 
@@ -104,7 +104,7 @@ import Img2 from "../images/p2.png";
   }
 
   function votep2() {
-    contract.methods.vote_Abraham_Lincoln().send({from: addr, gas: 3000000, gasPrice: 3000,});
+    contract.methods.vote_AbrahamLincoln().send({from: addr, gas: 3000000, gasPrice: 3000,});
   }
 
   window.setInterval(getp1, 100);
