@@ -1,17 +1,21 @@
 import React from "react";
 import { Navbarstyle } from "./styles/Navbar.styles";
 import { useState } from "react";
+import {Basestyle} from "./styles/Base.styles";
+import Img1 from "../images/p1.png";
+import Img2 from "../images/p2.png";
 
 
 
-function Navbar() {
-
-  const[vote1, setVote1] = useState(0);
-  const[vote2, setVote2] = useState(0);
+ function Navbar() {
 
   const Web3 = require("web3");
   const web3 = new Web3(window.ethereum);
   const [addr, setAddr] = useState("");
+
+  const[vote1, setVote1] = useState(0);
+  const[vote2, setVote2] = useState(0);
+
 
   const abi = [
     {
@@ -81,9 +85,31 @@ function Navbar() {
       "type": "function"
     }
   ];
-  const address = "0x98C2FC9e9FE69b0d00Fc6a70347D93C0D5FE48b6";
+
+
+  const address = "0x035d8B9C7A0D3efD465f609B5E090F2BC1c1C481";
   const contract = new web3.eth.Contract(abi, address);
 
+
+  function getp1() {
+    contract.methods.getP1().call().then(value => setVote1(value));
+  }
+
+  function getp2() {
+    contract.methods.getP2().call().then(value => setVote2(value));
+  }
+
+  function votep1() {
+    contract.methods.votep1().send({from: addr, gas: 3000000, gasPrice: 3000,});
+  }
+
+  function votep2() {
+    contract.methods.votep2().send({from: addr, gas: 3000000, gasPrice: 3000,});
+  }
+
+  window.setInterval(getp1, 100);
+  window.setInterval(getp2, 100);
+  
 
   function metamask() {
 
@@ -102,38 +128,27 @@ function Navbar() {
   }
 
 
-  function getp1() {
-    contract.methods.getP1().call().then(value => setVote1(value));
-  }
-
-  function getp2() {
-    contract.methods.getP2().call().then(value => setVote2(value));
-  }
-
-  function votep1() {
-    contract.methods.votep1().send({from: "0x37AC319bE8cd4778D88B3a3eF17bF59157E37279", gas: 3000000, gasPrice: 3000,});
-  }
-
-  function votep2() {
-    contract.methods.votep2().send({from: "0x37AC319bE8cd4778D88B3a3eF17bF59157E37279", gas: 3000000, gasPrice: 3000,});
-  }
-
-
-
-  window.setInterval(getp1, 100);
-  window.setInterval(getp2, 100);
-
-
   return (
     <div>
       <Navbarstyle>
         <button  className="metamaskbutton" onClick={metamask} button> Connect Metamask </button>
-        <button  className="votep1" onClick={votep1} button> votep1 </button>
-        <button  className="votep2" onClick={votep2} button> votep2 </button>
-        <p className="getp1">{vote1}</p>
-        <p className="getp2">{vote2}</p>
-        <p> <b>Connected Public Address:</b> {addr} </p>
+        <p><b>Connected Public Address:</b> {addr} </p>
+        <h1 className="title-page"> 2024 Presidential Election </h1>
       </Navbarstyle>
+
+      <Basestyle>
+      <div className="container-one">
+        <p className="getp1"> Number of Votes:  <b>{vote1}</b></p>
+        <img className="p1" src={Img1} alt = "p1"/>
+        <button className="button-one" onClick={votep1} button> Vote for Theodore Roosevelt </button>
+      </div>
+
+      <div className="container-two">
+        <p className="getp2"> Number of Votes: <b>{vote2}</b></p>
+        <img className="p2" src={Img2} alt = "p2" />
+        <button  className="button-two" onClick={votep2} button> Vote for Abraham Lincoln </button>
+      </div>
+      </Basestyle>
     </div>
   );
 }

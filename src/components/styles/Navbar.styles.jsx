@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const Navbarstyle = styled.div`
 
 
+
 .metamaskbutton {
     position: absolute;
     top: 4%;
@@ -18,31 +19,17 @@ export const Navbarstyle = styled.div`
 
   }
 
-.getp1 {
-    position: absolute;
-    top: 35%;
-    right: 67%;
-    cursor: pointer;
+  p{
+    margin-bottom: 40px;
+    margin-left: 10px;
+    margin-top: 50px;
   }
 
-  .votep1 {
-    position: absolute;
-    top: 75%;
-    right: 67%;
-    cursor: pointer;
+  .title-page{
+    position: relative;
+    left: 580px;
+    top: 46px;
   }
 
-  .getp2 {
-    position: absolute;
-    top: 35%;
-    right: 26%;
-    cursor: pointer;
-  }
 
-  .votep2 {
-    position: absolute;
-    top: 75%;
-    right: 26%;
-    cursor: pointer;
-  }
 `;
