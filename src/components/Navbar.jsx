@@ -4,6 +4,9 @@ import { useState } from "react";
 import {Basestyle} from "./styles/Base.styles";
 import Img1 from "../images/p1.png";
 import Img2 from "../images/p2.png";
+import etherscan from "../images/logos/etherscan-logo-circle.png";
+import {Eth} from "./styles/Navbar.styles";
+
 
 
 
@@ -149,6 +152,12 @@ import Img2 from "../images/p2.png";
         <button  className="button-two" onClick={votep2} button> Vote for Abraham Lincoln </button>
       </div>
       </Basestyle>
+
+      <Eth>
+        <div>
+          <a href="https://rinkeby.etherscan.io/address/0xb8049cae4dc54534116aea22c681ced3d6e107c1#code"> <img src={etherscan} alt = "etherscan" /></a>
+        </div>
+      </Eth>
     </div>
   );
 }
