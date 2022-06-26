@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Navbarstyle = styled.div`
+
   .metamaskbutton {
     position: absolute;
     top: 4%;
@@ -42,5 +43,30 @@ img{
   left: 80%;
   top: 4.5%;
 }
+
+`;
+
+export const Sticker = styled.div`
+
+.stick{
+
+position: absolute;
+top: 13%;
+right: 2%;
+padding: 20px;
+cursor: pointer;
+border-radius: 10px;
+border-style: none;
+font-size: large;
+font-weight: bold;
+color: black;
+
+
+}
+
+
+
+
+
 
 `;
