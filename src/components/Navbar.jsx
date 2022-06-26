@@ -7,6 +7,8 @@ import Img2 from "../images/p2.png";
 import etherscan from "../images/logos/etherscan-logo-circle.png";
 import {Eth} from "./styles/Navbar.styles";
 import { Sticker } from "./styles/Navbar.styles";
+import opensea from "../images/logos/dddd.png";
+import { Opensea } from "./styles/Navbar.styles";
 
 
 
@@ -570,6 +572,14 @@ import { Sticker } from "./styles/Navbar.styles";
         <Sticker>
         <button className="stick" onClick={getstick}> Get Sticker NFT </button>
         </Sticker>
+         </div>
+
+         <div>
+
+          <Opensea>
+          <a href="https://testnets.opensea.io/collection/vote-independent-study"> <img src={opensea} alt = "etherscan" /></a>
+         </Opensea>
+
          </div>
     </div>
   );

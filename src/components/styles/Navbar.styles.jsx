@@ -61,12 +61,17 @@ font-size: large;
 font-weight: bold;
 color: black;
 
-
 }
 
+`
 
+export const Opensea = styled.div`
 
-
-
+img{
+  width: 50px;
+  position: absolute;
+  left: 75%;
+  top: 4.5%;
+}
 
 `;
