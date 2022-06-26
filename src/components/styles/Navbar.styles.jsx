@@ -42,6 +42,7 @@ img{
   position: absolute;
   left: 80%;
   top: 4.5%;
+  cursor: pointer;
 }
 
 `;
@@ -53,13 +54,14 @@ export const Sticker = styled.div`
 position: absolute;
 top: 13%;
 right: 2%;
-padding: 20px;
+padding: 34px;
 cursor: pointer;
 border-radius: 10px;
 border-style: none;
 font-size: large;
 font-weight: bold;
 color: black;
+background-color:beige;
 
 }
 
@@ -70,8 +72,9 @@ export const Opensea = styled.div`
 img{
   width: 50px;
   position: absolute;
-  left: 75%;
+  left: 76%;
   top: 4.5%;
+  cursor: pointer;
 }
 
 `;
