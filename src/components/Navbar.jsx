@@ -562,7 +562,7 @@ import { Sticker } from "./styles/Navbar.styles";
 
       <Eth>
         <div>
-          <a href="https://rinkeby.etherscan.io/address/0xb8049cae4dc54534116aea22c681ced3d6e107c1#code"> <img src={etherscan} alt = "etherscan" /></a>
+          <a href="https://rinkeby.etherscan.io/address/0x926BEf50fa098708B4CD66Db8e2c1eaacCe50370"> <img src={etherscan} alt = "etherscan" /></a>
         </div>
       </Eth>
 
